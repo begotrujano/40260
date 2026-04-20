@@ -1,0 +1,12 @@
+<!ELEMENT lavadora (ciclo+)>
+<!ELEMENT ciclo (accion | bucle)+>
+<!ATTLIST ciclo nombre CDATA #REQUIRED>
+
+<!ELEMENT accion (parametro*)>
+<!ATTLIST accion tipo (llenar | girar | calentar | vaciar | esperar) #REQUIRED>
+
+<!ELEMENT parametro (#PCDATA)>
+<!ATTLIST parametro nombre (nivel | sentido | velocidad | temp | minutos) #REQUIRED>
+
+<!ELEMENT bucle (accion+)>
+<!ATTLIST bucle repeticiones CDATA #REQUIRED>

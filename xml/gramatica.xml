@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE lavadora SYSTEM "lavadora.dtd">
+
+<lavadora>
+    <ciclo nombre="LavadoExpress">
+        
+        <accion tipo="llenar">
+            <parametro nombre="nivel">Medio</parametro>
+        </accion>
+
+        <accion tipo="calentar">
+            <parametro nombre="temp">30</parametro>
+        </accion>
+
+        <bucle repeticiones="10">
+            <accion tipo="girar">
+                <parametro nombre="sentido">Reloj</parametro>
+                <parametro nombre="velocidad">Rapido</parametro>
+            </accion>
+            <accion tipo="esperar">
+                <parametro nombre="minutos">1</parametro>
+            </accion>
+        </bucle>
+
+        <accion tipo="vaciar" />
+
+        <accion tipo="girar">
+            <parametro nombre="velocidad">Turbo</parametro>
+            <parametro nombre="minutos">5</parametro>
+        </accion>
+
+    </ciclo>
+</lavadora>

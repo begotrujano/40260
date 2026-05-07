@@ -1,0 +1,20 @@
+button {
+    width: 30px;
+    height: 30px;
+}
+
+button[id="b0"]{
+    width: 83%;
+    color: red;
+}
+
+div {
+    width: 110px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input{
+    width:85px;
+    height: 30px;
+}

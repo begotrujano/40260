@@ -1,5 +1,8 @@
 let resultado = document.getElementById("resultado")
 let botones = document.getElementsByTagName("button")
+let prm1 = 0
+let operacion = ""
+
 for (const key in botones) {
     if (Object.prototype.hasOwnProperty.call(botones, key)) {
         const boton = botones[key];
@@ -7,37 +10,38 @@ for (const key in botones) {
             boton.addEventListener("click", pintar)
         else
             boton.addEventListener("click", pintar2)
-        // console.log(boton)
     }
 }
 
 function pintar(e){
-    console.log(e.target.innerText)
     resultado.value += e.target.innerText
 }
 
-let operadores = document.getElementsByClassName("operadores")
-for (const key in operadores) {
-    if (Object.prototype.hasOwnProperty.call(operadores, key)) {
-        const operador = operadores[key];
-        operador.addEventListener("click", pintar2)
-        // console.log(operador)
-    }   
-}   
-
 function pintar2(e){
-    console.log(e.target.innerText)
-    if (e.target.innerText == "+" )
-        suma()
-}
-
-let prm1
-function suma(){
-    prm1 = resultado.value
-    resultado.value = ""
+    let signo = e.target.innerText
+    if (signo == "C") {
+        resultado.value = ""
+        prm1 = 0
+        operacion = ""
+    } else if (signo == "=") {
+        igual()
+    } else {
+        prm1 = resultado.value
+        operacion = signo
+        resultado.value = ""
+    }
 }
 
 function igual(){
-    prm2 = resultado.value
-    resultado.value = parseInt(prm1) + parseInt(prm2)
+    let prm2 = resultado.value
+    let final = 0
+    let n1 = parseFloat(prm1)
+    let n2 = parseFloat(prm2)
+
+    if (operacion == "+") final = n1 + n2
+    if (operacion == "-") final = n1 - n2
+    if (operacion == "x") final = n1 * n2
+    if (operacion == "/") final = n1 / n2
+
+    resultado.value = final
 }

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../y.js", "../z.js", "../xyz.js"],
+  "sourcesContent": ["export function y(param){\r\n    console.log(\"y:\"+param)\r\n    return \"fin y\"\r\n}", "export function z(param) {\r\n    console.log(\"z:\" + param)\r\n    return \"fin z\"\r\n}", "import * as miMOdulo from \"./x.js\"\r\nimport { y } from \"./y.js\"\r\nimport { z } from \"./z.js\"\r\n\r\nconsole.log(miModulo.x(\"abc\"))\r\nconsole.log(miModulo.xx(\"def\"))\r\nconsole.log(y(\"ghi\"))\r\nconsole.log(z(\"jkl\"))"],
+  "mappings": "MAAO,SAASA,EAAEC,EAAM,CACpB,eAAQ,IAAI,KAAKA,CAAK,EACf,OACX,CCHO,SAASC,EAAEC,EAAO,CACrB,eAAQ,IAAI,KAAOA,CAAK,EACjB,OACX,CCCA,QAAQ,IAAI,SAAS,EAAE,KAAK,CAAC,EAC7B,QAAQ,IAAI,SAAS,GAAG,KAAK,CAAC,EAC9B,QAAQ,IAAIC,EAAE,KAAK,CAAC,EACpB,QAAQ,IAAIC,EAAE,KAAK,CAAC",
+  "names": ["y", "param", "z", "param", "y", "z"]
+}
